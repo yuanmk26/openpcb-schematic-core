@@ -1,0 +1,23 @@
+{
+  "name": "openpcb-schematic-core",
+  "version": "0.1.0",
+  "description": "Core SchematicIR types and helpers for OpenPCB.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node ../openpcb-dsl/node_modules/tsup/dist/cli-default.js src/index.ts --format esm --dts",
+    "test": "node ../openpcb-dsl/node_modules/vitest/vitest.mjs run",
+    "typecheck": "node ../openpcb-dsl/node_modules/typescript/bin/tsc --noEmit"
+  }
+}
