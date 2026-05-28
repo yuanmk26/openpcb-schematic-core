@@ -26,6 +26,7 @@ export type SchematicPinSide = "left" | "right" | "top" | "bottom";
 export interface SchematicPinAnchor {
   id: string;
   name: string;
+  number?: string;
   direction?: SchematicPinDirection;
   side?: SchematicPinSide;
   offset?: Point;
@@ -40,6 +41,7 @@ export interface SchematicSymbolInstance {
   sourceRef: string;
   symbolKind: string;
   symbolSpecId?: string;
+  symbolSpec?: SymbolSpec;
   position?: Point;
   rotation?: number;
   pins: SchematicPinAnchor[];
@@ -68,7 +70,7 @@ export interface SymbolBodySpec {
 
 export interface SymbolPinSpec {
   name: string;
-  number?: number;
+  number?: string;
   side: SchematicPinSide;
   offset: Point;
   direction?: SchematicPinDirection;
